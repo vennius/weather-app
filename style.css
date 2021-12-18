@@ -1,0 +1,48 @@
+body{
+  font-family: inherit arial;
+  background: #b2e6f3;
+}
+
+.input{
+  display: flex;
+  justify-content: center;
+}
+
+.input input{
+  width: 200px;
+  height: 30px;
+  margin-top: 30px;
+  display: inline-block;
+  border-radius: 20px;
+  border: none;
+  border: 3px solid black;
+  text-align: center;
+  padding: 5px;
+}
+
+.input input:focus{
+  outline: none;
+}
+
+.deg{
+  font-size: 10px;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.deg img{
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 10px;
+}
+
+.deg span{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.status{
+  text-align: center;
+  font-size: 30px;
+}
