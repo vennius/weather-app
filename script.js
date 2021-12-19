@@ -13,13 +13,15 @@ const img = document.querySelectorAll('.deg img');
 const deg = document.querySelector('.deg-value');
 const status = document.querySelector('.status p');
 
+let currentDeg = 0;
+
 //Default
 def();
 
 input.addEventListener('change', async () => {
   const data = await getData(url(input.value));
   const translated = await getData(translate(data.weather[0].description));
-  const currentDeg = parseInt(data.main.temp);
+  currentDeg = parseInt(data.main.temp);
   img.forEach((img) => {
     img.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
   });
@@ -31,7 +33,7 @@ input.addEventListener('change', async () => {
 async function def(){
   const data = await getData(url('Medan'));
   const translated = await getData(translate(data.weather[0].description));
-  const currentDeg = parseInt(data.main.temp);
+  currentDeg = parseInt(data.main.temp);
   img.forEach((img) => {
     img.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
   });
