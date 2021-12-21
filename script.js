@@ -32,16 +32,16 @@ input.addEventListener('change', async () => {
 });
 
 async function def(){
-  const data = await getData(url('Medan'));
-  const translated = await getData(translate(data.weather[0].description));
+  const data = await getData(url('Indonesia'));
+  //const translated = await getData(translate(data.weather[0].description));
   currentDeg = parseInt(data.main.temp);
   img.forEach((img) => {
     img.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
   });
   deg.textContent = data.main.temp + '°C';
-  status.innerHTML = translated.result.text.toUpperCase();
+  status.innerHTML = data.weather[0].description.toUpperCase();
   systemColor();
-  input.value = 'Medan';
+  input.value = 'Indonesia';
 }
 
 function systemColor(){
